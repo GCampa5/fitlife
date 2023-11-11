@@ -1,0 +1,6 @@
+ENTREGA PERSONA
+- Metáforas : Explicar todos los iconos de la aplicación, 
+la funcionalidad y a donde te llevan los iconos y todo eso...
+- Colores, textos, contrastes ( Modo oscuro para la app y contrastes de colores) 
+- Tutorial: Crear un tutorial el cual vaya explicando las diferentes funcionalidades de la app. 
+- Personas diferentes: IDIOMAS( Español, Ingles, Italiano), (Textos mas grandes para personas con visibilidad reducida)
