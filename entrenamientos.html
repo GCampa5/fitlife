@@ -12,10 +12,13 @@
 <style>
     .gray-box {
         background-color: #f2f2f2;
-        padding: 15px;
         border-radius: 5px;
         margin-bottom: 15px;
-        height: 300px;
+        height: 175px;
+    }
+
+    .small-text {
+        color: rgb(20, 205, 60);
     }
 </style>
 
@@ -38,27 +41,54 @@
 </nav>
 
 <body>
-    <div class="container justify-content-center align-items-center mt-4">
-        <h1 class="text-center">Mis Dietas</h1>
-        <div class="container justify-content-center align-items-center mt-4">
+    <div class="container mt-4">
+        <h1 class="text-center">Entrenamientos</h1>
+
+        <div class="container mt-5">
             <div class="row">
-                <div class="border border-3 p-2 text-center">
-                    <p>¡Visualiza tus dietas guardadas aquí!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
-                            src="./images/iconoDieta.png"></p>
+                <div class="col-md-6">
+                    <h3><strong>Cronología</strong></h3>
                 </div>
-                <h3 style="margin-top: 20px;"><strong>Dieta Volumen</strong></h3>
+                <div class="col-md-6 text-end">
+                    <p class="small-text">Mostrar todos</p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12 gray-box">
                 </div>
-                <h3 style="margin-top: 20px;"><strong>Dieta Definición</strong></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="margin-top: 20px;"><strong>Nuevo Entrenamiento</strong></h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="small-text" style="margin-top: 30px">Mostrar todos</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 gray-box">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="margin-top: 20px;"><strong>Rutinas</strong></h3>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="small-text" style="margin-top: 30px">Mostrar todos</p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12 gray-box">
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <footer class="mt-4 text-center">
         <p>FitLife &copy; 2023</p>
     </footer>
+
 </body>
 
 </html>
