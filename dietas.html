@@ -11,6 +11,7 @@
 
 <style>
     .gray-box {
+        background-color: white;
         border: 1px solid #000;
         padding: 15px;
         border-radius: 5px;
@@ -27,22 +28,110 @@
             FitLife
         </a>
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <span class="nav-link">Usuario</span>
-            </li>
-            <li class="nav-item active">
+            <ul class="nav-item active">
+                <span class="nav-link" role="button" data-bs-toggle="modal"
+                    data-bs-target="#ajustesModal">Usuario</span>
+            </ul>
+            <ul class="nav-item active">
                 <a href="./login.html" class="nav-link">Cerrar sesión</a>
-            </li>
+            </ul>
         </ul>
     </div>
 </nav>
 
-<body>
+<!-- Modal -->
+<div class="modal fade" id="ajustesModal" tabindex="-1" aria-labelledby="ajustesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ajustesModalLabel">Ajustes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del modal (opciones de ajustes) -->
+                <div class="mb-3">
+                    <label for="modoOscuro" class="form-label">Modo Oscuro:</label>
+                    <button style="float: right;" id="modoOscuro" type="button" class="btn btn-outline-primary"
+                        onclick="toggleModoOscuro()">Desactivado</button>
+                </div>
+                <div class="mb-3">
+                    <label for="letra" class="form-label">Tamaño de Letra Aumentado:</label>
+                    <button style="float: right;" id="letra" type="button" class="btn btn-outline-primary"
+                        onclick="toggleTamanioLetra()">Desactivado</button>
+                </div>
+                <!-- Agrega más opciones según sea necesario -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleModoOscuro() {
+        var boton = document.getElementById('modoOscuro');
+        boton.innerText = boton.innerText === 'Activado' ? 'Desactivado' : 'Activado';
+
+        // Selecciona el cuerpo del documento
+        var body = document.body;
+
+        // Cambia el color de fondo del cuerpo a negro cuando se activa el modo oscuro, y a blanco cuando se desactiva
+        body.style.backgroundColor = boton.innerText === 'Activado' ? 'black' : '#f2f2f2';
+
+        // Cambia el color del texto a blanco cuando se activa el modo oscuro, y a negro cuando se desactiva
+        body.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
+
+        // Selecciona todos los elementos h1, h2 y otros elementos que desees, y cambia su color de texto
+        var elementosTextoBlanco = document.querySelectorAll('h1, h2');
+        elementosTextoBlanco.forEach(function (elemento) {
+            elemento.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
+        });
+
+        // Selecciona los elementos p y mantiene su color de texto negro
+        var elementosP = document.querySelectorAll('p');
+        elementosP.forEach(function (elemento) {
+            elemento.style.color = 'black';
+        });
+
+        // Selecciona el modal y evita cambiar el color del texto en el modal
+        var modalTitle = document.querySelector('.modal-title');
+        var modalBody = document.querySelector('.modal-body');
+        modalTitle.style.color = 'black';
+        modalBody.style.color = 'black';
+    }
+
+    function toggleTamanioLetra() {
+        var boton = document.getElementById('letra');
+        boton.innerText = boton.innerText === 'Activado' ? 'Desactivado' : 'Activado';
+
+        // Ajusta el tamaño de la fuente para el cuerpo del documento
+        var body = document.body;
+        body.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
+
+        // Ajusta el tamaño de la fuente para los encabezados h1 dentro del cuerpo
+        var elementosH1 = document.querySelectorAll('h1');
+        elementosH1.forEach(function (elemento) {
+            elemento.style.fontSize = boton.innerText === 'Activado' ? '2em' : ''; // Puedes ajustar el valor según tus necesidades
+        });
+
+        // Ajusta el tamaño de la fuente para los encabezados h3 dentro del cuerpo
+        var elementosH3 = document.querySelectorAll('h3');
+        elementosH3.forEach(function (elemento) {
+            elemento.style.fontSize = boton.innerText === 'Activado' ? '2em' : ''; // Puedes ajustar el valor según tus necesidades
+        });
+
+        // Ajusta el tamaño de la fuente para los elementos p dentro del cuerpo
+        var elementosP = document.querySelectorAll('p');
+        elementosP.forEach(function (elemento) {
+            elemento.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
+        });
+    }
+</script>
+
+<body style="background-color: #f2f2f2;">
     <div class="container justify-content-center align-items-center mt-4">
         <h1 class="text-center">Mis Dietas</h1>
         <div class="container justify-content-center align-items-center mt-4">
             <div class="row">
-                <div class="border border-3 p-2 text-center">
+                <div class="border border-3 p-2 text-center" style="background-color: white;">
                     <p>¡Visualiza tus dietas guardadas aquí!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
                             src="./images/iconoDieta.png"></p>
                 </div>
@@ -50,7 +139,8 @@
             <div class="d-flex justify-content-between">
                 <h3 style="margin-top: 20px;"><strong>Dieta Volumen</strong></h3>
                 <img src="./images/lapiz.png" width="25px" height="25px" style="margin-top: 30px;">
-            </div>            <div class="container mt-4 gray-box">
+            </div>
+            <div class="container mt-4 gray-box">
                 <div class="row">
                     <div class="col-md-4">
                         <p>Aporte nutrucional: 2700 kcal</p>
@@ -85,6 +175,8 @@
     <footer class="mt-4 text-center">
         <p>FitLife &copy; 2023</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
