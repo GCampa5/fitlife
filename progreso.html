@@ -87,6 +87,10 @@
             elemento.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
         });
 
+        // Selecciona el footer y mantiene su color de texto negro
+        var footerText = document.querySelector('footer p');
+        footerText.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
+
         // Selecciona el modal y evita cambiar el color del texto en el modal
         var modalTitle = document.querySelector('.modal-title');
         var modalBody = document.querySelector('.modal-body');
