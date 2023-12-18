@@ -11,9 +11,9 @@
 <style>
     .card {
         background-image: url('./images/logo\ en\ blanco.png');
-        background-size: contain; 
-        background-repeat: no-repeat;  
-        background-position: center top 30px;  
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top 30px;
         margin-top: 20px;
         padding: 20px;
         border-radius: 10px;
@@ -74,12 +74,13 @@
                                 placeholder="Ingrese su contraseña" name="password" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Confirmar Contraseña</label>
+                            <label for="confirm_password">Confirmar Contraseña</label>
                             <input type="password" class="form-control" id="confirm_password"
                                 placeholder="Reescriba su contraseña" name="confirmPassword" required>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                onclick="validateRegister()">Registrarse</button>
                         </div>
                     </form>
                     <div class="form-group mt-3">
@@ -90,5 +91,29 @@
         </div>
     </div>
 </body>
+
+<script>
+    function validateRegister() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var confirm_password = document.getElementById('confirm_password').value;
+
+        if (username === '' || password === '') {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+
+        if (password != confirm_password) {
+            alert('Las contraseñas no coinciden');
+            return;
+        }
+
+        alert('Registro exitoso!');
+
+        /*setTimeout(function () {
+            window.location.href = 'login.html'; 
+        }, 2000); */
+    }
+</script>
 
 </html>
