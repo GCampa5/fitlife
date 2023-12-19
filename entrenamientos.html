@@ -14,11 +14,57 @@
         background-color: white;
         border-radius: 5px;
         margin-bottom: 15px;
-        height: 175px;
+        position: relative;
     }
 
     .small-text {
         color: rgb(20, 205, 60);
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .image-container {
+        flex: 1;
+        position: relative;
+    }
+
+    .text-container {
+        flex: 1;
+        margin-top: 10%
+    }
+
+    .green {
+        color: rgb(120, 209, 31);
+        font-size: 3em; 
+    }
+
+    .date {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 10px;
+        opacity: 0.6;
+    }
+
+    .image-caption {
+        position: absolute;
+        bottom: 0;
+        top: 1;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
+        font-style: italic;
+        color: #777;
+    }
+
+    .rutina-text {
+        margin-left: 40px;
+        font-style: italic;
+        color: #777;
     }
 </style>
 
@@ -83,9 +129,9 @@
         body.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
 
         // Selecciona todos los elementos h1, h2, p y otros elementos que desees, y cambia su color de texto
-        var elementosTextoBlanco = document.querySelectorAll('h1, h2, p');
+        var elementosTextoBlanco = document.querySelectorAll('h2');
         elementosTextoBlanco.forEach(function (elemento) {
-            elemento.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
+            elemento.style.color = 'black'
         });
 
         // Selecciona el footer y mantiene su color de texto negro
@@ -107,8 +153,8 @@
         var body = document.body;
         body.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
 
-         // Ajusta el tamaño de la fuente para los encabezados h1 dentro del cuerpo
-         var elementosH1 = document.querySelectorAll('h1');
+        // Ajusta el tamaño de la fuente para los encabezados h1 dentro del cuerpo
+        var elementosH1 = document.querySelectorAll('h1');
         elementosH1.forEach(function (elemento) {
             elemento.style.fontSize = boton.innerText === 'Activado' ? '2em' : ''; // Puedes ajustar el valor según tus necesidades
         });
@@ -142,6 +188,16 @@
             </div>
             <div class="row">
                 <div class="col-md-12 gray-box">
+                    <div class="flex-container">
+                        <div class="image-container">
+                            <img src="./images/Correr.png" alt="Correr">
+                        </div>
+                        <div class="text-container">
+                            <h2><strong>Carrera al aire libre:</strong></h2>
+                            <p class="green">16,08 KM</p>
+                            <span class="date">10/8/23</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -154,7 +210,33 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 gray-box">
+                <div class="gray-box">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Bici.png" class="img-fluid">
+                                <p class="image-caption">Ciclismo</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Remo.png" class="img-fluid">
+                                <p class="image-caption">Remo</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Core.png" class="img-fluid">
+                                <p class="image-caption">Entrenamiento de Core</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Hit.png" class="img-fluid">
+                                <p class="image-caption">Hit</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -167,7 +249,33 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 gray-box">
+                <div class="gray-box">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Pierna.png" style="width: 100px; height: 100px; margin: 20px;">
+                                <p class="rutina-text">Pierna</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Espalda.png" style="width: 100px; height: 100px; margin: 20px;">
+                                <p class="rutina-text">Espalda</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Brazo.png" style="width: 100px; height: 100px; margin: 20px;">
+                                <p class="rutina-text">Brazo</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="image-container">
+                                <img src="./images/Full body.png" style="width: 100px; height: 100px; margin: 20px;">
+                                <p class="rutina-text">Full body</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

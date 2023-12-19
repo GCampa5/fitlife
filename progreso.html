@@ -14,11 +14,27 @@
         background-color: white;
         border-radius: 5px;
         margin-bottom: 15px;
-        height: 175px;
     }
 
-    .small-text {
-        color: rgb(20, 205, 60);
+    .flex-container {
+        display: flex;
+        gap: 150px;
+        align-items: center;
+    }
+
+    .flex-container2 {
+        display: flex;
+        align-items: center;
+    }
+
+    .image-container {
+        flex: 1;
+        max-width: 35%;
+        height: auto;
+    }
+
+    .text-container {
+        flex: 1;
     }
 </style>
 
@@ -127,16 +143,45 @@
             <h2>Peso</h2>
             <div class="row">
                 <div class="col-md-12 gray-box">
+                    <div class="flex-container">
+                        <div class="image-container">
+                            <img src="./images/peso.png" class="img-fluid" alt="peso" style="margin: 20px;">
+                        </div>
+                        <div class="image-container">
+                            <img src="./images/grafico_peso.jpg" class="img-fluid" alt="grafico_peso"
+                                style="margin: 20px;">
+                        </div>
+                    </div>
                 </div>
             </div>
             <h2>Puntuaje</h2>
             <div class="row">
                 <div class="col-md-12 gray-box">
+                    <div class="flex-container">
+                        <div class="image-container">
+                            <img src="./images/puntuaje.png" class="img-fluid" alt="puntuaje" style="margin: 20px;">
+                        </div>
+                        <div class="image-container">
+                            <img src="./images/grafico_puntuaje.jpg" class="img-fluid" alt="grafico_puntuaje"
+                                style="margin: 20px;">
+                        </div>
+                    </div>
                 </div>
             </div>
             <h2>Sueño</h2>
             <div class="row">
                 <div class="col-md-12 gray-box">
+                    <div class="flex-container2">
+                        <div class="text-container">
+                            <h3>Horas de sueño:</h3>
+                            <p>7 horas 28 minutos</p>
+                            <img src="./images/cama_icono.jpg">
+                        </div>
+                        <div class="image-container">
+                            <img src="./images/barras_sueño.png" class="img-fluid" alt="grafico_peso"
+                                style="margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
