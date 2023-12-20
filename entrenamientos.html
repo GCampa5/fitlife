@@ -37,7 +37,7 @@
 
     .green {
         color: rgb(120, 209, 31);
-        font-size: 3em; 
+        font-size: 3em;
     }
 
     .date {
@@ -97,6 +97,10 @@
             </div>
             <div class="modal-body">
                 <!-- Contenido del modal (opciones de ajustes) -->
+                <div class="mb-5" style="text-align: center;">
+                    <img src="./images/profile-picture.png" style="width: 150px; height: auto;">
+                    <p style="margin-top: 10px; font-size: large;">Usuario</p>
+                </div>
                 <div class="mb-3">
                     <label for="modoOscuro" class="form-label">Modo Oscuro:</label>
                     <button style="float: right;" id="modoOscuro" type="button" class="btn btn-outline-primary"
@@ -107,7 +111,9 @@
                     <button style="float: right;" id="letra" type="button" class="btn btn-outline-primary"
                         onclick="toggleTamanioLetra()">Desactivado</button>
                 </div>
-                <!-- Agrega más opciones según sea necesario -->
+                <div class="mb-3" style="text-align: center;">
+                    <a href="./login.html"><button class="btn btn-danger">Cerrar sesión</button></a>
+                </div>
             </div>
         </div>
     </div>
