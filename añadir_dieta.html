@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entrenamientos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+    .gray-box {
+        background-color: white;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .small-text {
+        color: rgb(20, 205, 60);
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .image-container {
+        flex: 1;
+        position: relative;
+    }
+
+    .text-container {
+        flex: 1;
+        margin-top: 10%
+    }
+
+    .green {
+        color: rgb(120, 209, 31);
+        font-size: 3em;
+    }
+
+    .date {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 10px;
+        opacity: 0.6;
+    }
+
+    .image-caption {
+        position: absolute;
+        bottom: 0;
+        top: 1;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
+        font-style: italic;
+        color: #777;
+    }
+
+    .rutina-text {
+        margin-left: 40px;
+        font-style: italic;
+        color: #777;
+    }
+
+    form {
+        margin: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+</style>
+
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"
+            style="font-family: 'Montserrat', sans-serif; font-size:xx-large; font-weight: bold;">
+            <img src="./images/logo.png" alt="FitLife logo" style="width: 60px; height: 60px; margin-right: 10px;">
+            FitLife
+        </a>
+        <ul class="navbar-nav">
+            <ul class="nav-item active">
+                <span class="nav-link" role="button" data-bs-toggle="modal"
+                    data-bs-target="#ajustesModal">Usuario</span>
+            </ul>
+            <ul class="nav-item active">
+                <a href="./login.html" class="nav-link">Cerrar sesión</a>
+            </ul>
+        </ul>
+    </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="ajustesModal" tabindex="-1" aria-labelledby="ajustesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ajustesModalLabel">Ajustes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del modal (opciones de ajustes) -->
+                <div class="mb-5" style="text-align: center;">
+                    <img src="./images/profile-picture.png" style="width: 150px; height: auto;">
+                    <p style="margin-top: 10px; font-size: large;">Usuario</p>
+                </div>
+                <div class="mb-3">
+                    <label for="modoOscuro" class="form-label">Modo Oscuro:</label>
+                    <button style="float: right;" id="modoOscuro" type="button" class="btn btn-outline-primary"
+                        onclick="toggleModoOscuro()">Desactivado</button>
+                </div>
+                <div class="mb-3">
+                    <label for="letra" class="form-label">Tamaño de Letra Aumentado:</label>
+                    <button style="float: right;" id="letra" type="button" class="btn btn-outline-primary"
+                        onclick="toggleTamanioLetra()">Desactivado</button>
+                </div>
+                <div class="mb-3" style="text-align: center;">
+                    <a href="./login.html"><button class="btn btn-danger">Cerrar sesión</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function toggleModoOscuro() {
+        var boton = document.getElementById('modoOscuro');
+        boton.innerText = boton.innerText === 'Activado' ? 'Desactivado' : 'Activado';
+
+        // Selecciona el cuerpo del documento
+        var body = document.body;
+
+        // Cambia el color de fondo del cuerpo a negro cuando se activa el modo oscuro, y a blanco cuando se desactiva
+        body.style.backgroundColor = boton.innerText === 'Activado' ? 'black' : '#f2f2f2';
+
+        // Cambia el color del texto a blanco cuando se activa el modo oscuro, y a negro cuando se desactiva
+        body.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
+
+        // Selecciona todos los elementos h1, h2, p y otros elementos que desees, y cambia su color de texto
+        var elementosTextoBlanco = document.querySelectorAll('h2');
+        elementosTextoBlanco.forEach(function (elemento) {
+            elemento.style.color = 'black'
+        });
+
+        // Selecciona el footer y mantiene su color de texto negro
+        var footerText = document.querySelector('footer p');
+        footerText.style.color = boton.innerText === 'Activado' ? 'white' : 'black';
+
+        // Selecciona el modal y evita cambiar el color del texto en el modal
+        var modalTitle = document.querySelector('.modal-title');
+        var modalBody = document.querySelector('.modal-body');
+        modalTitle.style.color = 'black';
+        modalBody.style.color = 'black';
+    }
+
+    function toggleTamanioLetra() {
+        var boton = document.getElementById('letra');
+        boton.innerText = boton.innerText === 'Activado' ? 'Desactivado' : 'Activado';
+
+        // Ajusta el tamaño de la fuente para el cuerpo del documento
+        var body = document.body;
+        body.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
+
+        // Ajusta el tamaño de la fuente para los encabezados h1 dentro del cuerpo
+        var elementosH1 = document.querySelectorAll('h1');
+        elementosH1.forEach(function (elemento) {
+            elemento.style.fontSize = boton.innerText === 'Activado' ? '2em' : ''; // Puedes ajustar el valor según tus necesidades
+        });
+
+        // Ajusta el tamaño de la fuente para los encabezados h3 dentro del cuerpo
+        var elementosH3 = document.querySelectorAll('h3');
+        elementosH3.forEach(function (elemento) {
+            elemento.style.fontSize = boton.innerText === 'Activado' ? '2em' : ''; // Puedes ajustar el valor según tus necesidades
+        });
+
+        // Ajusta el tamaño de la fuente para los elementos p dentro del cuerpo
+        var elementosP = document.querySelectorAll('p');
+        elementosP.forEach(function (elemento) {
+            elemento.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
+        });
+    }
+
+
+    function toggleGrayBox(boxId) {
+        var grayBox = document.getElementById(boxId);
+        grayBox.style.display = (grayBox.style.display === 'none') ? 'block' : 'none';
+    }
+
+</script>
+
+<body style="background-color: #f2f2f2;">
+    <div class="container mt-4">
+        <h1 class="text-center">Nueva dieta &nbsp;<img src="./images/lapiz.png" width="35px" height="35px" alt="Editar">
+        </h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px;">
+                    <h3><img src="./images/mas.png" style="width: 35px; height: 35px;"
+                            onclick="toggleGrayBox('box_1')">&nbsp;&nbsp;<strong>Agregar
+                            comida</strong></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 gray-box" id="box_1">
+                    <form>
+                        <div class="form-group">
+                            <label for="opcionesSelect">Buscar comida:</label>
+                            <select class="form-control" id="opcionesSelect">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="opcion1">Alimento 1</option>
+                                <option value="opcion2">Alimento 2</option>
+                                <option value="opcion3">Alimento 3</option>
+                                <option value="opcion3">Alimento 4</option>
+                                <option value="opcion3">Alimento 5</option>
+                                <option value="opcion3">Alimento 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filtroTexto">Cantidad:</label>
+                            <input type="text" class="form-control" id="filtroTexto"
+                                placeholder="Ingresa la cantidad en gramos">
+                        </div>
+                        <div class="form-group" style="text-align: right; margin: 20px;">
+                            <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px;">
+                    <h3><img src="./images/mas.png" style="width: 35px; height: 35px;"
+                            onclick="toggleGrayBox('box_2')">&nbsp;&nbsp;<strong>Agregar
+                            comida</strong></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 gray-box" id="box_2">
+                    <form>
+                        <div class="form-group">
+                            <label for="opcionesSelect">Buscar comida:</label>
+                            <select class="form-control" id="opcionesSelect">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="opcion1">Alimento 1</option>
+                                <option value="opcion2">Alimento 2</option>
+                                <option value="opcion3">Alimento 3</option>
+                                <option value="opcion3">Alimento 4</option>
+                                <option value="opcion3">Alimento 5</option>
+                                <option value="opcion3">Alimento 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filtroTexto">Cantidad:</label>
+                            <input type="text" class="form-control" id="filtroTexto"
+                                placeholder="Ingresa la cantidad en gramos">
+                        </div>
+                        <div class="form-group" style="text-align: right; margin: 20px;">
+                            <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px;">
+                    <h3><img src="./images/mas.png" style="width: 35px; height: 35px;"
+                            onclick="toggleGrayBox('box_3')">&nbsp;&nbsp;<strong>Agregar
+                            comida</strong></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 gray-box" id="box_3">
+                    <form>
+                        <div class="form-group">
+                            <label for="opcionesSelect">Buscar comida:</label>
+                            <select class="form-control" id="opcionesSelect">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="opcion1">Alimento 1</option>
+                                <option value="opcion2">Alimento 2</option>
+                                <option value="opcion3">Alimento 3</option>
+                                <option value="opcion3">Alimento 4</option>
+                                <option value="opcion3">Alimento 5</option>
+                                <option value="opcion3">Alimento 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filtroTexto">Cantidad:</label>
+                            <input type="text" class="form-control" id="filtroTexto"
+                                placeholder="Ingresa la cantidad en gramos">
+                        </div>
+                    </form>
+                    <div class="form-group" style="text-align: right; margin: 20px;">
+                        <button type="button" class="btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: right; margin: 20px;">
+                <button type="button" class="btn btn-light" style="border: 3px solid"><strong>Guardar dieta</strong> &nbsp;<img src="./images/guardar.png" style="width: 35px; height: auto;"></button>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-4 text-center">
+        <p>FitLife &copy; 2023</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
