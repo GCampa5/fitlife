@@ -79,8 +79,8 @@
                                 placeholder="Reescriba su contraseña" name="confirmPassword" required>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg"
-                                onclick="validateRegister()">Registrarse</button>
+                            <a href="./login.html" id="redirect"><button type="button" class="btn btn-primary btn-lg" id="register_button"
+                                onclick="validateRegister(this)">Registrarse</button></a>
                         </div>
                     </form>
                     <div class="form-group mt-3">
@@ -93,27 +93,33 @@
 </body>
 
 <script>
-    function validateRegister() {
+    function validateRegister(button) {
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
         var confirm_password = document.getElementById('confirm_password').value;
+        var enlace = document.getElementById('redirect');
 
-        if (username === '' || password === '') {
+        if (username === '' || password === '' || confirm_password === '') {
             alert('Por favor, complete todos los campos.');
+            button.disabled = true;
+            enlace.href = './register.html';
             return;
         }
 
         if (password != confirm_password) {
             alert('Las contraseñas no coinciden');
+            button.disabled = true;
+            enlace.href = './register.html';
             return;
         }
 
-        alert('Registro exitoso!');
-
+        enlace.href = './login.html';
+        alert('Registro completado con éxito');
         /*setTimeout(function () {
             window.location.href = 'login.html'; 
         }, 2000); */
     }
+
 </script>
 
 </html>

@@ -52,7 +52,7 @@
         </a>
         <ul class="navbar-nav">
             <ul class="nav-item active">
-                <span class="nav-link" role="button" data-bs-toggle="modal"
+                <span class="nav-link" role="button" id="usuario" data-bs-toggle="modal"
                     data-bs-target="#ajustesModal">Usuario</span>
             </ul>
             <ul class="nav-item active">
@@ -160,6 +160,9 @@
             elemento.style.display = 'none';
         });
 
+        var user = document.getElementById('usuario');
+        user.style.display = 'block';
+
         var desayuno = document.getElementById('imgdes');
         desayuno.style.display = 'none';
 
@@ -175,7 +178,7 @@
                 masElemento.style.display = 'block';
             }
         }
-        
+
         button.disabled = true;
     }
 </script>
