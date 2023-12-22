@@ -157,7 +157,7 @@
 
         // Ajusta el tamaño de la fuente para el cuerpo del documento
         var body = document.body;
-        body.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
+        body.style.fontSize = boton.innerText === 'Activado' ? '1.5em' : ''; // Puedes ajustar el valor según tus necesidades
 
         // Ajusta el tamaño de la fuente para los encabezados h1 dentro del cuerpo
         var elementosH1 = document.querySelectorAll('h1');
@@ -176,6 +176,10 @@
         elementosP.forEach(function (elemento) {
             elemento.style.fontSize = boton.innerText === 'Activado' ? '1.2em' : ''; // Puedes ajustar el valor según tus necesidades
         });
+
+        var elementoP = document.getElementById('p-green');
+        console.log(elementoP);
+        elementoP.style.fontSize = boton.innerText == 'Activado' ? '3em' : '5em';
     }
 </script>
 
@@ -200,7 +204,7 @@
                         </div>
                         <div class="text-container">
                             <h2><strong>Carrera al aire libre:</strong></h2>
-                            <p class="green">16,08 KM</p>
+                            <p class="green" id="p-green">16,08 KM</p>
                             <span class="date">10/8/23</span>
                         </div>
                     </div>

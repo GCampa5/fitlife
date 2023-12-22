@@ -10,7 +10,13 @@
 </head>
 
 <style>
+    .home-container {
+        transition: transform 0.3s ease;
+    }
 
+    .home-container:hover {
+        transform: scale(1.05);
+    }
 </style>
 
 <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
@@ -41,26 +47,32 @@
             </div>
 
             <div class="container mt-5">
-                <h3>Entrenamientos</h3>
-                <div class="col-md-12">
-                    <a href="./entrenamientos.html">
-                        <img src="./images/gimnasio_foto.jpg" style="width: 100%; height: 300px; object-fit: cover;"
-                            alt="Descripción de la imagen">
-                    </a>
+                <div class="home-container">
+                    <h3>Entrenamientos</h3>
+                    <div class="col-md-12">
+                        <a href="./entrenamientos.html">
+                            <img src="./images/gimnasio_foto.jpg" style="width: 100%; height: 300px; object-fit: cover;"
+                                alt="Descripción de la imagen">
+                        </a>
+                    </div>
                 </div>
-                <h3 style="margin-top: 20px;">Progreso Corporal</h3>
-                <div class="col-md-12">
-                    <a href="./progreso.html">
-                        <img src="./images/progreso_corporal.jpg"
-                            style="width: 100%; height: 300px; object-fit: cover;">
-                    </a>
+                <div class="home-container">
+                    <h3 style="margin-top: 20px;">Progreso Corporal</h3>
+                    <div class="col-md-12">
+                        <a href="./progreso.html">
+                            <img src="./images/progreso_corporal.jpg"
+                                style="width: 100%; height: 300px; object-fit: cover;">
+                        </a>
+                    </div>
                 </div>
-                <h3 style="margin-top: 20px;">Dietas</h3>
-                <div class="col-md-12">
-                    <a href="./dietas.html">
-                        <img src="./images/dietas.jpeg" style="width: 100%; height: 300px; object-fit: cover;"
-                            alt="Descripción de la imagen">
-                    </a>
+                <div class="home-container">
+                    <h3 style="margin-top: 20px;">Dietas</h3>
+                    <div class="col-md-12">
+                        <a href="./dietas.html">
+                            <img src="./images/dietas.jpeg" style="width: 100%; height: 300px; object-fit: cover;"
+                                alt="Descripción de la imagen">
+                        </a>
+                    </div>
                 </div>
             </div>
 
