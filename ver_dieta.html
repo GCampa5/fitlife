@@ -152,13 +152,31 @@
         });
     }
 
-    function eliminate() {
+    function eliminate(button) {
         alert('Esta acción eliminará las comidas de la dieta actual');
-        var elementos = document.querySelectorAll('h3, p, li, span, img');
+        var elementos = document.querySelectorAll('h3, p, li, span');
         console.log(elementos);
         elementos.forEach(function (elemento) {
             elemento.style.display = 'none';
         });
+
+        var desayuno = document.getElementById('imgdes');
+        desayuno.style.display = 'none';
+
+        var comida = document.getElementById('comida');
+        comida.style.display = 'none';
+
+        var cena = document.getElementById('cena');
+        cena.style.display = 'none';
+
+        for (var i = 1; i <= 3; i++) {
+            var masElemento = document.getElementById('mas' + i);
+            if (masElemento) {
+                masElemento.style.display = 'block';
+            }
+        }
+        
+        button.disabled = true;
     }
 </script>
 
@@ -172,6 +190,7 @@
                     <div class="card mb-4">
                         <div class="card-body gray-box">
                             <div class="card-header d-flex justify-content-between">
+                                <img src="./images/mas.png" style="width: 35px; height: 35px; display: none;" id="mas1">
                                 <h3 class="card-title"><strong>Desayuno</strong></h3>
                                 <img src="./images/lapiz.png" width="25px" height="25px" alt="Editar">
                             </div>
@@ -189,7 +208,7 @@
                             </ul>
                             <span>Total: 124 kcal</span>
                         </div>
-                        <img src="./images/desayuno.jpg" class="card-img img-bottom" alt="desayuno">
+                        <img src="./images/desayuno.jpg" id="imgdes" class="card-img img-bottom" alt="desayuno">
                     </div>
                 </div>
 
@@ -197,6 +216,7 @@
                     <div class="card mb-4">
                         <div class="card-body gray-box">
                             <div class="card-header d-flex justify-content-between">
+                                <img src="./images/mas.png" style="width: 35px; height: 35px; display: none;" id="mas2">
                                 <h3 class="card-title"><strong>Comida</strong></h3>
                                 <img src="./images/lapiz.png" width="25px" height="25px" alt="Editar">
                             </div>
@@ -214,7 +234,7 @@
                             </ul>
                             <span>Total: 976 kcal</span>
                         </div>
-                        <img src="./images/comida.jpg" class="card-img img-bottom" alt="comida">
+                        <img src="./images/comida.jpg" id="comida" class="card-img img-bottom" alt="comida">
                     </div>
                 </div>
 
@@ -222,6 +242,7 @@
                     <div class="card mb-4">
                         <div class="card-body gray-box">
                             <div class="card-header d-flex justify-content-between">
+                                <img src="./images/mas.png" style="width: 35px; height: 35px; display: none;" id="mas3">
                                 <h3 class="card-title"><strong>Cena</strong></h3>
                                 <img src="./images/lapiz.png" width="25px" height="25px" alt="Editar">
                             </div>
@@ -242,16 +263,16 @@
                             </ul>
                             <span>Total: 900 kcal</span>
                         </div>
-                        <img src="./images/cena.jpg" class="card-img img-bottom" alt="cena">
+                        <img src="./images/cena.jpg" id="cena" class="card-img img-bottom" alt="cena">
                     </div>
                 </div>
             </div>
 
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-danger" onclick="eliminate()">Eliminar</button>
+                    <button type="button" class="btn btn-danger" onclick="eliminate(this)">Eliminar</button>
                 </div>
-               <!-- <div class="col-md-6 text-end">
+                <!-- <div class="col-md-6 text-end">
                     <button type="button" class="btn btn-success">Modificar</button>
                 </div> -->
             </div>
